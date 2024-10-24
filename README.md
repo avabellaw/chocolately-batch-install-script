@@ -8,8 +8,8 @@ Outputs progress and informs you at end if any failed.
 
 1. Add the programs you want to install into the programs.txt file.
     
-    _Google "choco [program name]" to find the exact name to use. You can then review the package before installing_
-    
+    _Google "choco [program name]" to find its package name. Review before installing_
+
     * **Alternatively**, set ```$programs``` to an array of programs you want to install. For example:
 
        ![List of programs](docs/program-list-example.png)
@@ -19,7 +19,7 @@ Outputs progress and informs you at end if any failed.
 
 ## Notes
 
-The following command will update all programs previously installed with Chocolately:
+The following command will update all programs installed using Chocolately:
 
 ```choco upgrade all -y```
 
