@@ -1,8 +1,11 @@
 # chocolately-batch-install-script
-Installs all programs found in the programs.txt file using Chocolately package manager. Useful if you have to reinstall Windows.
+Installs all programs found in the programs.txt file using the Chocolately package manager.
+
+Useful if you have to reinstall Windows.
+
 Outputs progress and informs you at end if any failed.
 
-**Chocolately will be installed automatically**
+**Chocolately will install automatically if not already installed**
 
 ## Steps
 
