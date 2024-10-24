@@ -10,7 +10,14 @@ $Seperator = "----------------------------"
 
 Write-Host "`n[You are about to install all $ProgramsLen programs included in this script using Chocolately]`n" -ForegroundColor Yellow
 Write-Host "Add NORDVPN and NORDPASS manually`n" -ForegroundColor Red
-$(Write-Host "Press enter to continue..." -ForegroundColor White -NoNewLine; Read-Host)
+
+Write-Host "Press enter to continue..." -ForegroundColor White
+$KeyPressed = [System.Console]::ReadKey($true)
+if ($KeyPressed.Key -ne [System.ConsoleKey]::Enter) {
+	Write-Host "`nExiting script..." -ForegroundColor Red
+	Exit
+}
+
 Write-Host "$Seperator`n" -ForegroundColor Blue
 
 if (Get-Command -Name choco.exe -ErrorAction SilentlyContinue) {
