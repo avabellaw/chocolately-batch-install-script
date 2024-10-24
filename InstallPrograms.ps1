@@ -1,12 +1,14 @@
-$programs = @(
-	"[ADD CHOCLATELY PROGRAM NAMES HERE]"
-            )
+$programs = Get-Content -Path ".\programs.txt"
+
+if ($programs -is [string]) {
+    $programs = $programs -split "`n"
+}
 			
 $ProgramsLen = $programs.Length
 			
 $FailedInstalls = @()
 
-$Seperator = "----------------------------"
+$Seperator = "--------------------------------------------------------"
 
 Write-Host "`n[You are about to install all $ProgramsLen programs included in this script using Chocolately]`n" -ForegroundColor Yellow
 Write-Host "Add NORDVPN and NORDPASS manually`n" -ForegroundColor Red
@@ -36,7 +38,9 @@ choco install $ProgramName -y
 }
 
 for ($i=0; $i -lt $programs.Length; $i++) {
-	Write-Host "`n$Seperator`nInstalling program $($i + 1) of $ProgramsLen`n$Seperator`n" -ForegroundColor Blue
+	Write-Host "`n$Seperator`nInstalling program $($i + 1) of $($ProgramsLen): [" -ForegroundColor Blue -NoNewline
+	Write-Host "$($programs[$i])" -ForegroundColor Yellow -NoNewline
+	Write-Host "]`n$Seperator`n" -ForegroundColor Blue
     Install-Program $programs[$i] 
 	if ($($LASTEXITCODE) -ne 0) {
 		$FailedInstalls += $programs[$i]
