@@ -5,11 +5,13 @@ Outputs progress and informs you at end if any failed.
 **Chocolately will be installed automatically**
 
 ## Steps
-1. Add the programs you want to install into the array at the top of the file. For example:
 
+1. Add the programs you want to install into the programs.txt file.
+    
     _Google "choco [program name]" to find the exact name to use. You can then review the package before installing_
+    * **Alternatively**, set ```$programs``` to an array of the programs you want to install. For example:
 
-    ![List of programs](docs/program-list-example.png)
+       ![List of programs](docs/program-list-example.png)
 2. Run Powershell as administrator and locate the script.
 3. Run the script:
     ```.\InstallPrograms.ps1```
