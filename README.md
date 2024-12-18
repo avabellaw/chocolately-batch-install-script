@@ -38,3 +38,5 @@ or alternatively:
 
 If Chocolately is in the system PATH.
 
+For regular updates, put the command into a script file and setup a task in task schedular to run it.
+
