@@ -20,6 +20,12 @@ Outputs progress and informs you at end if any failed.
 3. Run the script:
     ```.\InstallPrograms.ps1```
 
+## InstallAdd.ps1 script
+
+This script will use Chocolately to install the program as norma, however, if it doesn't fail it will add the program name to the programs list (programs.txt).
+
+Add the script's directory to your system's path and use the command "InstallAdd [program name]".
+
 ## Notes
 
 The following command will update all programs installed using Chocolately:
